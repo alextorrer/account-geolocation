@@ -1,0 +1,18 @@
+<aura:component>
+
+    <aura:handler event="c:AccountsLoaded" action="{!c.onAccountsLoaded}"/>
+    <lightning:navigation aura:id="navigation"/>
+    <aura:attribute name="rows" type="List"/>
+    <aura:attribute name="cols" type="List"/>
+
+    <lightning:card title="Account List" iconName="standard:account">
+        <lightning:datatable 
+        data="{!v.rows}"
+        columns="{!v.cols}"
+        keyField="Id"
+        hideCheckboxColumn="true"
+        showRowNumberColumn="true"
+        onrowaction="{!c.onRowAction}"/>
+    </lightning:card>
+
+</aura:component>	
